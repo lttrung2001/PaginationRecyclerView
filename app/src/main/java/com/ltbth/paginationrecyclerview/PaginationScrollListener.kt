@@ -15,7 +15,9 @@ abstract class PaginationScrollListener(private val linearLayoutManager: LinearL
 
         if (isLoading() || isLastPage()) {
             return
-        } else if (firstVisibleItemPosition >= 0 && visibleItemCount + firstVisibleItemPosition >= totalItemCount) {
+        }
+        if (firstVisibleItemPosition >= 0
+            && visibleItemCount + firstVisibleItemPosition >= totalItemCount) {
             loadMoreItem()
         }
     }
